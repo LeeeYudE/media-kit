@@ -134,10 +134,10 @@ class NativePlayer extends PlatformPlayer {
   ///
   @override
   Future<void> open(
-    Playable playable, {
-    bool play = true,
-    bool synchronized = true,
-  }) {
+      Playable playable, {
+        bool play = true,
+        bool synchronized = true,
+      }) {
     Future<void> function() async {
       if (disposed) {
         throw AssertionError('[Player] has been disposed');
@@ -581,9 +581,9 @@ class NativePlayer extends PlatformPlayer {
 
       // Do nothing if currently present at the first or last index & playlist mode is [PlaylistMode.none] or [PlaylistMode.single].
       if ([
-            PlaylistMode.none,
-            PlaylistMode.single,
-          ].contains(state.playlistMode) &&
+        PlaylistMode.none,
+        PlaylistMode.single,
+      ].contains(state.playlistMode) &&
           state.playlist.index == state.playlist.medias.length - 1) {
         return;
       }
@@ -611,9 +611,9 @@ class NativePlayer extends PlatformPlayer {
 
       // Do nothing if currently present at the first or last index & playlist mode is [PlaylistMode.none] or [PlaylistMode.single].
       if ([
-            PlaylistMode.none,
-            PlaylistMode.single,
-          ].contains(state.playlistMode) &&
+        PlaylistMode.none,
+        PlaylistMode.single,
+      ].contains(state.playlistMode) &&
           state.playlist.index == 0) {
         return;
       }
@@ -1129,8 +1129,8 @@ class NativePlayer extends PlatformPlayer {
   @override
   Future<Uint8List?> screenshot(
       {String? format = 'image/jpeg',
-      bool synchronized = true,
-      bool includeLibassSubtitles = false}) async {
+        bool synchronized = true,
+        bool includeLibassSubtitles = false}) async {
     Future<Uint8List?> function() async {
       if (![
         'image/jpeg',
@@ -1186,10 +1186,10 @@ class NativePlayer extends PlatformPlayer {
   /// * https://mpv.io/manual/master/#properties
   ///
   Future<void> setProperty(
-    String property,
-    String value, {
-    bool waitForInitialization = true,
-  }) async {
+      String property,
+      String value, {
+        bool waitForInitialization = true,
+      }) async {
     if (disposed) {
       throw AssertionError('[Player] has been disposed');
     }
@@ -1218,9 +1218,9 @@ class NativePlayer extends PlatformPlayer {
   /// * https://mpv.io/manual/master/#properties
   ///
   Future<String> getProperty(
-    String property, {
-    bool waitForInitialization = true,
-  }) async {
+      String property, {
+        bool waitForInitialization = true,
+      }) async {
     if (disposed) {
       throw AssertionError('[Player] has been disposed');
     }
@@ -1251,10 +1251,10 @@ class NativePlayer extends PlatformPlayer {
   /// * https://mpv.io/manual/master/#properties
   ///
   Future<void> observeProperty(
-    String property,
-    Future<void> Function(String) listener, {
-    bool waitForInitialization = true,
-  }) async {
+      String property,
+      Future<void> Function(String) listener, {
+        bool waitForInitialization = true,
+      }) async {
     if (disposed) {
       throw AssertionError('[Player] has been disposed');
     }
@@ -1291,9 +1291,9 @@ class NativePlayer extends PlatformPlayer {
   /// * https://mpv.io/manual/master/#properties
   ///
   Future<void> unobserveProperty(
-    String property, {
-    bool waitForInitialization = true,
-  }) async {
+      String property, {
+        bool waitForInitialization = true,
+      }) async {
     if (disposed) {
       throw AssertionError('[Player] has been disposed');
     }
@@ -1322,9 +1322,9 @@ class NativePlayer extends PlatformPlayer {
   /// * https://mpv.io/manual/master/#list-of-input-commands
   ///
   Future<void> command(
-    List<String> command, {
-    bool waitForInitialization = true,
-  }) async {
+      List<String> command, {
+        bool waitForInitialization = true,
+      }) async {
     if (disposed) {
       throw AssertionError('[Player] has been disposed');
     }
@@ -1379,7 +1379,7 @@ class NativePlayer extends PlatformPlayer {
                     generated.mpv_format.MPV_FORMAT_STRING) {
                   final property = device.keys[j].cast<Utf8>().toDartString();
                   final value =
-                      device.values[j].u.string.cast<Utf8>().toDartString();
+                  device.values[j].u.string.cast<Utf8>().toDartString();
                   switch (property) {
                     case 'name':
                       name = value;
@@ -1517,7 +1517,7 @@ class NativePlayer extends PlatformPlayer {
         }
       }
       if (prop.ref.name.cast<Utf8>().toDartString() ==
-              'cache-buffering-state' &&
+          'cache-buffering-state' &&
           prop.ref.format == generated.mpv_format.MPV_FORMAT_DOUBLE) {
         final bufferingPercentage = prop.ref.data.cast<Double>().value;
 
@@ -1551,7 +1551,7 @@ class NativePlayer extends PlatformPlayer {
           if (FallbackBitrateHandler.supported(uri)) {
             if (!audioBitrateCache.containsKey(Media.normalizeURI(uri))) {
               audioBitrateCache[uri] =
-                  await FallbackBitrateHandler.calculateBitrate(
+              await FallbackBitrateHandler.calculateBitrate(
                 uri,
                 duration,
               );
@@ -1754,7 +1754,7 @@ class NativePlayer extends PlatformPlayer {
                 if (map.values[j].format ==
                     generated.mpv_format.MPV_FORMAT_STRING) {
                   final value =
-                      map.values[j].u.string.cast<Utf8>().toDartString();
+                  map.values[j].u.string.cast<Utf8>().toDartString();
                   switch (property) {
                     case 'type':
                       type = value;
@@ -2352,7 +2352,7 @@ class NativePlayer extends PlatformPlayer {
         'scale': 'bilinear',
         'dscale': 'bilinear',
         'dither': 'no',
-        'cache': 'yes',
+        'cache': configuration.cache.name,
         'cache-on-disk': 'yes',
         'hr-seek': 'yes',
         'hr-seek-framedrop': 'no',
@@ -2432,7 +2432,7 @@ class NativePlayer extends PlatformPlayer {
         'sub-text': generated.mpv_format.MPV_FORMAT_NODE,
         'secondary-sub-text': generated.mpv_format.MPV_FORMAT_NODE,
       }.forEach(
-        (property, format) {
+            (property, format) {
           final name = property.toNativeUtf8();
           mpv.mpv_observe_property(
             ctx,
@@ -2628,7 +2628,7 @@ class NativePlayer extends PlatformPlayer {
 
   /// Currently observed properties through [observeProperty].
   final HashMap<String, Future<void> Function(String)> observed =
-      HashMap<String, Future<void> Function(String)>();
+  HashMap<String, Future<void> Function(String)>();
 
   /// The methods which must execute synchronously before playback of a source can begin.
   final List<Future<void> Function()> onLoadHooks = [];
@@ -2641,7 +2641,7 @@ class NativePlayer extends PlatformPlayer {
 
   /// [HashMap] for retrieving previously fetched audio-bitrate(s).
   static final HashMap<String, double> audioBitrateCache =
-      HashMap<String, double>();
+  HashMap<String, double>();
 
   /// Whether the [NativePlayer] is initialized for unit-testing.
   @visibleForTesting
@@ -2662,11 +2662,11 @@ class _ScreenshotData {
   final bool includeLibassSubtitles;
 
   const _ScreenshotData(
-    this.ctx,
-    this.lib,
-    this.format,
-    this.includeLibassSubtitles,
-  );
+      this.ctx,
+      this.lib,
+      this.format,
+      this.includeLibassSubtitles,
+      );
 }
 
 /// [NativePlayer.screenshot]

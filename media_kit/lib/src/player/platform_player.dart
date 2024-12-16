@@ -44,71 +44,71 @@ abstract class PlatformPlayer {
   /// Current state of the player available as listenable [Stream]s.
   late PlayerStream stream = PlayerStream(
     playlistController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     playingController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     completedController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     positionController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     durationController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     volumeController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     rateController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     pitchController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     bufferingController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     bufferingPercentageController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     bufferController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     playlistModeController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     /* AUDIO-PARAMS STREAM SHOULD NOT BE DISTINCT */
     audioParamsController.stream,
     /* VIDEO-PARAMS STREAM SHOULD NOT BE DISTINCT */
     videoParamsController.stream,
     audioBitrateController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     audioDeviceController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     audioDevicesController.stream.distinct(
-      (previous, current) => ListEquality().equals(previous, current),
+          (previous, current) => ListEquality().equals(previous, current),
     ),
     trackController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     tracksController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     widthController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     heightController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     subtitleController.stream.distinct(
-      (previous, current) => ListEquality().equals(previous, current),
+          (previous, current) => ListEquality().equals(previous, current),
     ),
     logController.stream.distinct(
-      (previous, current) => previous == current,
+          (previous, current) => previous == current,
     ),
     /* ERROR STREAM SHOULD NOT BE DISTINCT */
     errorController.stream,
@@ -155,9 +155,9 @@ abstract class PlatformPlayer {
   }
 
   Future<void> open(
-    Playable playable, {
-    bool play = true,
-  }) {
+      Playable playable, {
+        bool play = true,
+      }) {
     throw UnimplementedError(
       '[PlatformPlayer.open] is not implemented',
     );
@@ -283,9 +283,7 @@ abstract class PlatformPlayer {
     );
   }
 
-  Future<Uint8List?> screenshot(
-      {String? format = 'image/jpeg',
-      bool includeLibassSubtitles = false}) async {
+  Future<Uint8List?> screenshot({String? format = 'image/jpeg', bool includeLibassSubtitles = false}) async {
     throw UnimplementedError(
       '[PlatformPlayer.screenshot] is not implemented',
     );
@@ -298,98 +296,74 @@ abstract class PlatformPlayer {
   }
 
   @protected
-  final StreamController<Playlist> playlistController =
-      StreamController<Playlist>.broadcast();
+  final StreamController<Playlist> playlistController = StreamController<Playlist>.broadcast();
 
   @protected
-  final StreamController<bool> playingController =
-      StreamController<bool>.broadcast();
+  final StreamController<bool> playingController = StreamController<bool>.broadcast();
 
   @protected
-  final StreamController<bool> completedController =
-      StreamController<bool>.broadcast();
+  final StreamController<bool> completedController = StreamController<bool>.broadcast();
 
   @protected
-  final StreamController<Duration> positionController =
-      StreamController<Duration>.broadcast();
+  final StreamController<Duration> positionController = StreamController<Duration>.broadcast();
 
   @protected
-  final StreamController<Duration> durationController =
-      StreamController.broadcast();
+  final StreamController<Duration> durationController = StreamController.broadcast();
 
   @protected
-  final StreamController<double> volumeController =
-      StreamController.broadcast();
+  final StreamController<double> volumeController = StreamController.broadcast();
 
   @protected
-  final StreamController<double> rateController =
-      StreamController<double>.broadcast();
+  final StreamController<double> rateController = StreamController<double>.broadcast();
 
   @protected
-  final StreamController<double> pitchController =
-      StreamController<double>.broadcast();
+  final StreamController<double> pitchController = StreamController<double>.broadcast();
 
   @protected
-  final StreamController<bool> bufferingController =
-      StreamController<bool>.broadcast();
+  final StreamController<bool> bufferingController = StreamController<bool>.broadcast();
   @protected
-  final StreamController<double> bufferingPercentageController =
-      StreamController<double>.broadcast();
+  final StreamController<double> bufferingPercentageController = StreamController<double>.broadcast();
   @protected
-  final StreamController<Duration> bufferController =
-      StreamController<Duration>.broadcast();
+  final StreamController<Duration> bufferController = StreamController<Duration>.broadcast();
 
   @protected
-  final StreamController<PlaylistMode> playlistModeController =
-      StreamController<PlaylistMode>.broadcast();
+  final StreamController<PlaylistMode> playlistModeController = StreamController<PlaylistMode>.broadcast();
 
   @protected
-  final StreamController<PlayerLog> logController =
-      StreamController<PlayerLog>.broadcast();
+  final StreamController<PlayerLog> logController = StreamController<PlayerLog>.broadcast();
 
   @protected
-  final StreamController<String> errorController =
-      StreamController<String>.broadcast();
+  final StreamController<String> errorController = StreamController<String>.broadcast();
 
   @protected
-  final StreamController<AudioParams> audioParamsController =
-      StreamController<AudioParams>.broadcast();
+  final StreamController<AudioParams> audioParamsController = StreamController<AudioParams>.broadcast();
 
   @protected
-  final StreamController<VideoParams> videoParamsController =
-      StreamController<VideoParams>.broadcast();
+  final StreamController<VideoParams> videoParamsController = StreamController<VideoParams>.broadcast();
 
   @protected
-  final StreamController<double?> audioBitrateController =
-      StreamController<double?>.broadcast();
+  final StreamController<double?> audioBitrateController = StreamController<double?>.broadcast();
 
   @protected
-  final StreamController<AudioDevice> audioDeviceController =
-      StreamController<AudioDevice>.broadcast();
+  final StreamController<AudioDevice> audioDeviceController = StreamController<AudioDevice>.broadcast();
 
   @protected
-  final StreamController<List<AudioDevice>> audioDevicesController =
-      StreamController<List<AudioDevice>>.broadcast();
+  final StreamController<List<AudioDevice>> audioDevicesController = StreamController<List<AudioDevice>>.broadcast();
 
   @protected
-  final StreamController<Track> trackController =
-      StreamController<Track>.broadcast();
+  final StreamController<Track> trackController = StreamController<Track>.broadcast();
 
   @protected
-  final StreamController<Tracks> tracksController =
-      StreamController<Tracks>.broadcast();
+  final StreamController<Tracks> tracksController = StreamController<Tracks>.broadcast();
 
   @protected
-  final StreamController<int?> widthController =
-      StreamController<int?>.broadcast();
+  final StreamController<int?> widthController = StreamController<int?>.broadcast();
 
   @protected
-  final StreamController<int?> heightController =
-      StreamController<int?>.broadcast();
+  final StreamController<int?> heightController = StreamController<int?>.broadcast();
 
   @protected
-  final StreamController<List<String>> subtitleController =
-      StreamController<List<String>>.broadcast();
+  final StreamController<List<String>> subtitleController = StreamController<List<String>>.broadcast();
 
   // --------------------------------------------------
 
@@ -506,6 +480,8 @@ class PlayerConfiguration {
   /// Learn more: https://ffmpeg.org/ffmpeg-protocols.html#Protocol-Options
   final List<String> protocolWhitelist;
 
+  final MediaCache cache;
+
   /// {@macro player_configuration}
   const PlayerConfiguration({
     this.vo = 'null',
@@ -519,6 +495,7 @@ class PlayerConfiguration {
     this.libassAndroidFont,
     this.libassAndroidFontName,
     this.logLevel = MPVLogLevel.error,
+    this.cache = MediaCache.auto,
     this.bufferSize = 32 * 1024 * 1024,
     this.protocolWhitelist = const [
       'udp',
@@ -567,4 +544,14 @@ enum MPVLogLevel {
 
   /// Extremely noisy.
   trace,
+}
+
+enum MediaCache {
+  auto('auto'),
+  yes('yes'),
+  no('no');
+
+  final String value;
+
+  const MediaCache(this.value);
 }
