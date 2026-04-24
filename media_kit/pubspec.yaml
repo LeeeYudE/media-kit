@@ -3,6 +3,7 @@ description: A cross-platform video player & audio player for Flutter & Dart. Pe
 homepage: https://github.com/media-kit/media-kit
 repository: https://github.com/media-kit/media-kit
 version: 1.2.6
+publish_to: none
 
 screenshots:
   - description: "package:media_kit running on Android (visible controls)"

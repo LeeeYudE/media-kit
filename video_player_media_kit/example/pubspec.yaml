@@ -14,9 +14,12 @@ dependencies:
   video_player_media_kit:
     path: ../
 
-  media_kit_libs_macos_video: any
-  media_kit_libs_windows_video: ^1.0.11
-  media_kit_libs_linux: ^1.2.1
+  media_kit_libs_macos_video:
+    path: ../../libs/macos/media_kit_libs_macos_video
+  media_kit_libs_windows_video:
+    path: ../../libs/windows/media_kit_libs_windows_video
+  media_kit_libs_linux:
+    path: ../../libs/linux/media_kit_libs_linux
 
 dev_dependencies:
   test: any
