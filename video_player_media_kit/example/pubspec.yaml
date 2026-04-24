@@ -13,23 +13,23 @@ dependencies:
 
   video_player_media_kit:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: video_player_media_kit
       ref: main
 
   media_kit_libs_macos_video:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: libs/macos/media_kit_libs_macos_video
       ref: main
   media_kit_libs_windows_video:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: libs/windows/media_kit_libs_windows_video
       ref: main
   media_kit_libs_linux:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: libs/linux/media_kit_libs_linux
       ref: main
 

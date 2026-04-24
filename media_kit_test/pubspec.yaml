@@ -14,17 +14,17 @@ dependencies:
 
   media_kit:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: media_kit
       ref: main
   media_kit_video:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: media_kit_video
       ref: main
   media_kit_libs_video:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: libs/universal/media_kit_libs_video
       ref: main
 

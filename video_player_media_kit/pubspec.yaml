@@ -21,12 +21,12 @@ dependencies:
   # NOTE: Bump before publishing to pub.dev
   media_kit:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: media_kit
       ref: main
   media_kit_video:
     git:
-      url: git@github.com:LeeeYudE/media-kit.git
+      url: https://github.com/LeeeYudE/media-kit.git
       path: media_kit_video
       ref: main
 
