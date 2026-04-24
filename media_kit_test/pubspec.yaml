@@ -13,11 +13,20 @@ dependencies:
     sdk: flutter
 
   media_kit:
-    path: ../media_kit
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: media_kit
+      ref: main
   media_kit_video:
-    path: ../media_kit_video
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: media_kit_video
+      ref: main
   media_kit_libs_video:
-    path: ../libs/universal/media_kit_libs_video
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: libs/universal/media_kit_libs_video
+      ref: main
 
   path: ^1.8.2
   file_picker: ^8.1.3

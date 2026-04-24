@@ -12,14 +12,26 @@ dependencies:
   video_player: ^2.6.0
 
   video_player_media_kit:
-    path: ../
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: video_player_media_kit
+      ref: main
 
   media_kit_libs_macos_video:
-    path: ../../libs/macos/media_kit_libs_macos_video
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: libs/macos/media_kit_libs_macos_video
+      ref: main
   media_kit_libs_windows_video:
-    path: ../../libs/windows/media_kit_libs_windows_video
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: libs/windows/media_kit_libs_windows_video
+      ref: main
   media_kit_libs_linux:
-    path: ../../libs/linux/media_kit_libs_linux
+    git:
+      url: git@github.com:LeeeYudE/media-kit.git
+      path: libs/linux/media_kit_libs_linux
+      ref: main
 
 dev_dependencies:
   test: any
